@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Confetti from "react-confetti";
 import "./styles.css";
 
 const images = import.meta.glob("/src/assets/images/*.{png,jpg,jpeg,svg}", {
@@ -11,14 +10,7 @@ const LovePage = () => {
   const [balloonImages, setBalloonImages] = useState([]);
   const [isLetterOpen, setIsLetterOpen] = useState(false);
   const [isMusicPlaying, setIsMusicPlaying] = useState(true);
-  const [showConfetti, setShowConfetti] = useState(false);
   const audioRef = useRef(null);
-
-  const openLetter = () => {
-    setIsLetterOpen(true);
-    setShowConfetti(true);
-    setTimeout(() => setShowConfetti(false), 3000); // Hiệu ứng kéo dài 3s
-  };
 
   useEffect(() => {
     if (audioRef.current) {
@@ -49,7 +41,7 @@ const LovePage = () => {
         className="heart"
         animate={{ scale: [1, 1.2, 1] }}
         transition={{ repeat: Infinity, duration: 1 }}
-        onClick={() => openLetter()}
+        onClick={() => setIsLetterOpen(true)}
       >
         ❤️
       </motion.div>
