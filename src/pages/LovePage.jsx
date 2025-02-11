@@ -26,7 +26,7 @@ const LovePage = () => {
     <div className="container">
       <>
         <audio ref={audioRef} loop>
-          <source src="/src/assets/audio/romantic.mp3" type="audio/mpeg" />
+          <source src="/audio/romantic.mp3" type="audio/mpeg" />
         </audio>
         <button
           className="music-button"
